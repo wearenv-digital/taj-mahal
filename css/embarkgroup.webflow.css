@@ -8,6 +8,19 @@
   --warning-color: #ffc107;
 }
 
+input.form-input {
+  font-size: larger;
+  color: white;
+  background-color: #922626;
+  border: none;
+  height: 2rem;
+
+}
+
+input.form-input:focus {
+  outline: whitesmoke;
+}
+
 .form-field.error input {
   border-color: var(--error-color);
 }
@@ -16,10 +29,7 @@
   color: var(--error-color);
 }
 
-
 /* custom css for the form holder */
-
-
 
 div.form-holder-stripe {
   width: 100%;
@@ -30,9 +40,8 @@ div.form-holder-stripe {
 }
 
 form.book-ticket {
-  max-width: 100%
+  max-width: 100%;
 }
-
 
 .w-layout-grid {
   display: -ms-grid;
@@ -495,7 +504,11 @@ a {
 .footer {
   padding: 100px 3% 80px;
   background-color: #007ea7;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#36454f), color-stop(99%, #fff));
+  background-image: -webkit-gradient(linear,
+      left bottom,
+      left top,
+      from(#36454f),
+      color-stop(99%, #fff));
   background-image: linear-gradient(0deg, #36454f, #fff 99%);
 }
 
@@ -537,7 +550,11 @@ a {
 }
 
 .content-section.reveiws {
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(15%, #36454f), color-stop(96%, #fff));
+  background-image: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      color-stop(15%, #36454f),
+      color-stop(96%, #fff));
   background-image: linear-gradient(180deg, #36454f 15%, #fff 96%);
 }
 
@@ -792,7 +809,11 @@ a {
   position: relative;
   padding: 100px 3%;
   background-color: #007ea7;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(2%, #fff), color-stop(97%, #36454f));
+  background-image: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      color-stop(2%, #fff),
+      color-stop(97%, #36454f));
   background-image: linear-gradient(180deg, #fff 2%, #36454f 97%);
 }
 
@@ -1299,13 +1320,21 @@ a {
   -webkit-align-items: flex-end;
   -ms-flex-align: end;
   align-items: flex-end;
-  background-image: linear-gradient(5deg, rgba(0, 0, 0, 0.81), rgba(0, 0, 0, 0.65) 44%, transparent), url('../images/Hero-Image-02-1.png');
+  background-image: linear-gradient(5deg,
+      rgba(0, 0, 0, 0.81),
+      rgba(0, 0, 0, 0.65) 44%,
+      transparent),
+    url('../images/Hero-Image-02-1.png');
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
 }
 
 .slide-image.slide-image-two {
-  background-image: linear-gradient(5deg, #000, rgba(0, 0, 0, 0.65) 53%, transparent), url('../images/Hero-Image-01-1.png');
+  background-image: linear-gradient(5deg,
+      #000,
+      rgba(0, 0, 0, 0.65) 53%,
+      transparent),
+    url('../images/Hero-Image-01-1.png');
 }
 
 .left-arrow {
@@ -1338,8 +1367,16 @@ a {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.35)), to(rgba(0, 0, 0, 0.35))), url('../images/pexels-natalie-birdy-5739590.jpg');
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('../images/pexels-natalie-birdy-5739590.jpg');
+  background-image: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.35)),
+      to(rgba(0, 0, 0, 0.35))),
+    url('../images/pexels-natalie-birdy-5739590.jpg');
+  background-image: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)),
+    url('../images/pexels-natalie-birdy-5739590.jpg');
   background-position: 0px 0px, 0px 70%;
   background-size: auto, cover;
 }
@@ -1851,8 +1888,8 @@ a {
   border-color: #979899;
   border-radius: 0.5rem;
   background-color: #fff;
-  -webkit-transition: border-color 400ms cubic-bezier(.25, .46, .45, .94);
-  transition: border-color 400ms cubic-bezier(.25, .46, .45, .94);
+  -webkit-transition: border-color 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: border-color 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   color: #fff;
   font-size: 1rem;
 }
@@ -3437,7 +3474,8 @@ a {
 
   .page-padding-grid {
     -ms-grid-columns: minmax(3rem, 1fr) minmax(auto, 96rem) minmax(3rem, 1fr);
-    grid-template-columns: minmax(3rem, 1fr) minmax(auto, 96rem) minmax(3rem, 1fr);
+    grid-template-columns: minmax(3rem, 1fr) minmax(auto, 96rem) minmax(3rem,
+        1fr);
   }
 
   .button-text-2 {
@@ -3744,7 +3782,8 @@ a {
 
   .page-padding-grid {
     -ms-grid-columns: minmax(1.25rem, 1fr) minmax(auto, 96rem) minmax(1.25rem, 1fr);
-    grid-template-columns: minmax(1.25rem, 1fr) minmax(auto, 96rem) minmax(1.25rem, 1fr);
+    grid-template-columns: minmax(1.25rem, 1fr) minmax(auto, 96rem) minmax(1.25rem,
+        1fr);
   }
 
   .footer-columns-2 {

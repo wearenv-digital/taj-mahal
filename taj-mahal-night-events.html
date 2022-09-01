@@ -112,13 +112,13 @@
         <div class="form-holder-stripe">
           <form action="" class="book-ticket" id="book-ticket" method="">
             <label for="full-name">Full Name</label>
-            <input class="form-field" type="text" name="full-name" id="full-name">
+            <input class="form-field form-input" type="text" name="full-name" id="full-name">
             <small></small>
             <label for="email">Email</label>
-            <input class="form-field" type="text" name="email" id="email" value="">
+            <input class="form-field form-input" type="text" name="email" id="email" value="">
             <small></small>
             <label for="telephone">Contact Number</label>
-            <input class="form-field" type="tel" name="telephone" id="telephone">
+            <input class="form-field form-input" type="tel" name="telephone" id="telephone">
             <small></small>
             <label for="select-time">Select your time slot in the drop down menu</label>
             <select name="select-time" id="select-time">
@@ -130,8 +130,9 @@
               <option value="9.30-10">9:30 - 10pm</option>
             </select>
             <small></small>
+            <label for="consent-box">I consent to my details being stored by </label>
             <label for="submit">You will be redirected to a secure Stripe payment portal</label>
-            <input type="submit" name="submit-to-stripe" value"">
+            <input type="submit" name="submit-to-stripe" id="submit-button" value"">
           </form>
           <script src="js/book-ticket.js"></script>
         </div>

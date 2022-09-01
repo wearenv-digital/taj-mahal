@@ -1,20 +1,21 @@
 const form = document.getElementById('book-ticket');
-const fullName = document.getElementById('full-name');
-const email = document.getElementById('email');
-const telephone = document.getElementById('telephone');
+const fullNameEl = document.getElementById('full-name');
+const emailEl = document.getElementById('email');
+const telephoneEl = document.getElementById('telephone');
 const time = document.getElementById('select-time');
 
 // MAKE SURE THE SUBMIT BUTTON IS NOT PRESSED UNTILL THE FIELDS ARE COMPLETE
 
 const checkName = () => {
 	let valid = false;
-	const fullName = nameInput.value.trim();
+	const fullName = fullNameEl.value.trim();
+
 	if (!isRequired(fullName)) {
-		showError(nameInput, 'Name field cannot be left blank');
+		showError(fullName, 'Name field cannot be left blank');
 	} else if (!isNameValid(fullName)) {
-		showError(nameInput, 'Name must only contain letters');
+		showError(fullName, 'Name must only contain letters');
 	} else {
-		showSuccess(nameInput);
+		showSuccess(fullName);
 		valid = true;
 	}
 	return valid;
@@ -22,13 +23,14 @@ const checkName = () => {
 
 const checkEmail = () => {
 	let valid = false;
-	const email = emailInput.value.trim();
+	const email = emailEl.value.trim();
+
 	if (!isRequired(email)) {
-		showError(emailInput, 'Email field cannot be left blank');
+		showError(email, 'Email field cannot be left blank');
 	} else if (!isEmailValid(email)) {
-		showError(emailInput, 'Email is not valid');
+		showError(email, 'Email is not valid');
 	} else {
-		showSuccess(emailInput);
+		showSuccess(email);
 		valid = true;
 	}
 	return valid;
@@ -36,13 +38,14 @@ const checkEmail = () => {
 
 const checkTelephone = () => {
 	let valid = false;
-	const telephone = telephoneInput.value.trim();
+	const telephone = telephoneEl.value.trim();
+
 	if (!isRequired(telephone)) {
-		showError(telephoneInput, 'Telephone field cannot be left blank');
+		showError(telephone, 'Telephone field cannot be left blank');
 	} else if (!isTelephoneValid(telephone)) {
-		showError(telephoneInput, 'Number is not valid');
+		showError(telephone, 'Number is not valid');
 	} else {
-		showSuccess(telephoneInput);
+		showSuccess(telephone);
 		valid = true;
 	}
 	return valid;
@@ -66,6 +69,9 @@ const isTelephoneValid = (telephoneInput) => {
 
 const isRequired = (value) => (value === '' ? false : true);
 
+// submit validation
+let submitBtn = document.getElementById('submit-button');
+
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
 	var testDataObj = {
@@ -77,4 +83,3 @@ form.addEventListener('submit', (e) => {
 
 	console.log(testDataObj);
 });
-
