@@ -1,3 +1,39 @@
+/* SORT OUT THE BOUNCE */
+
+/* form validation */
+
+:root {
+  --error-color: #dc3545;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+}
+
+.form-field.error input {
+  border-color: var(--error-color);
+}
+
+.form-field small {
+  color: var(--error-color);
+}
+
+
+/* custom css for the form holder */
+
+
+
+div.form-holder-stripe {
+  width: 100%;
+  display: inline-block;
+  height: 300px;
+  border: 2px solid red;
+  padding: 30px;
+}
+
+form.book-ticket {
+  max-width: 100%
+}
+
+
 .w-layout-grid {
   display: -ms-grid;
   display: grid;
@@ -4510,6 +4546,7 @@ a {
   font-style: normal;
   font-display: auto;
 }
+
 @font-face {
   font-family: 'Inter';
   src: url('../fonts/Inter-Bold.woff') format('woff');
@@ -4517,6 +4554,7 @@ a {
   font-style: normal;
   font-display: auto;
 }
+
 @font-face {
   font-family: 'Inter';
   src: url('../fonts/Inter-Regular.woff') format('woff');
@@ -4524,6 +4562,7 @@ a {
   font-style: normal;
   font-display: auto;
 }
+
 @font-face {
   font-family: 'Inter';
   src: url('../fonts/Inter-SemiBold.woff') format('woff');
@@ -4531,6 +4570,7 @@ a {
   font-style: normal;
   font-display: auto;
 }
+
 @font-face {
   font-family: 'Samarn';
   src: url('../fonts/samarn__.ttf') format('truetype');
@@ -4538,6 +4578,7 @@ a {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Samaro';
   src: url('../fonts/samaro__.ttf') format('truetype');
