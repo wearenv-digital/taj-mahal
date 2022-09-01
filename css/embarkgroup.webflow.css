@@ -1,6 +1,6 @@
 /* SORT OUT THE BOUNCE */
 
-/* form validation */
+/* form and form validation */
 
 :root {
   --error-color: #dc3545;
@@ -13,8 +13,24 @@ input.form-input {
   color: white;
   background-color: #922626;
   border: none;
+  border-bottom: 2px solid whitesmoke;
   height: 2rem;
+  width: 60%;
 
+}
+
+
+div.form-holder-stripe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  margin-bottom: 18px;
+}
+
+form.book-ticket {
+  text-align: center;
 }
 
 input.form-input:focus {
@@ -29,19 +45,32 @@ input.form-input:focus {
   color: var(--error-color);
 }
 
-/* custom css for the form holder */
+input#submit-button {
+  font-size: larger;
+  border-radius: 2px;
+  border: none;
+  color: whitesmoke;
+  background-color: #922626;
+  padding: 10px 14px 10px 14px;
 
+}
+
+/* custom css for the form holder */
+/* 
 div.form-holder-stripe {
   width: 100%;
   display: inline-block;
-  height: 300px;
+  height: auto;
   border: 2px solid red;
-  padding: 30px;
-}
+  padding: 16px;
+  margin-bottom: 2em;
+} */
 
 form.book-ticket {
   max-width: 100%;
 }
+
+/* webflow css */
 
 .w-layout-grid {
   display: -ms-grid;

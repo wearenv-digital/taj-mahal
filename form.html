@@ -1,0 +1,77 @@
+<head>
+    <link rel="stylesheet" href="css/embarkgroup.webflow.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/public/checkout.js"></script>
+    <script src="/js/form.js"></script>
+
+    <style>
+        label,
+        input {
+            display: block;
+            text-align: left;
+        }
+
+        select#select-time {
+            display: block;
+
+        }
+    </style>
+</head>
+
+<body style="display:flex; flex-direction:column; align-items: center;">
+
+    <div style="max-width:60%; height:auto; display:block; text-align: left; padding: 20px; margin:20px">
+
+
+        <!-- everything below here is the form module -->
+
+
+        <div class="form-holder-stripe">
+            <form action="" class="book-ticket" id="book-ticket" method="">
+                <!-- tab 1 -->
+                <div class="tabbed-content tab-1" id="tab-1">
+                    <label for="full-name">Full Name</label>
+                    <input class="form-field form-input" type="text" name="full-name" id="full-name">
+                    <small></small>
+                    <label for="email">Email</label>
+                    <input class="form-field form-input" type="text" name="email" id="email" value="">
+                    <small></small>
+                    <label for="telephone">Contact Number</label>
+                    <input class="form-field form-input" type="tel" name="telephone" id="telephone">
+                    <small></small>
+                    <label for="select-time">Select your time slot in the drop down menu</label>
+                    <select name="select-time" id="select-time">
+                        <option value="7-7.30">7 - 7:30pm</option>
+                        <option value="7.30-8">7:30 - 8pm</option>
+                        <option value="8-8.30">8 - 8:30pm</option>
+                        <option value="8.30-9">8:30 - 9pm</option>
+                        <option value="9-9.30">9 - 9:30pm</option>
+                        <option value="9.30-10">9:30 - 10pm</option>
+                    </select>
+                    <small></small>
+                    <label for="consent-box">I consent to my details being stored for contact and marketing
+                        purposes</label>
+                    <input type="checkbox">
+                    <label for="submit">You will be redirected to a secure Stripe payment portal</label>
+                    <input type="submit" name="submit-to-stripe" id="submit-button">
+                </div>
+                <!-- tab 2 -->
+
+                <div class="tabbed-content tab-2" id="payment-form">
+                    <div class="payment-form tabbed-content tab-2" id="payment-element">
+                        <!-- stripe payment form -->
+
+                    </div>
+                </div>
+                <div class="spinner hidden" id="spinner"></div>
+                <span id="button-text">Pay now</span>
+                </button>
+                <div id="payment-message" class="hidden"></div>
+            </form>
+            <script src="/js/form.js"></script>
+        </div>
+
+    </div>
+
+
+</body>
