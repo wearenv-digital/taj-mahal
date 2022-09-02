@@ -34,16 +34,17 @@ const showSuccess = (input) => {
 	const error = formField.querySelector('small');
 	error.textContent = '';
 };
-
-function showPrice() {
-    function ticketQty(qty) {
+function ticketQty(qty) {
     let qty = 0;
-    let tickPrice = 34.95;
+    const tickPrice = 34.95;
     qty = tickPrice * qty;
     return qty;
-    };
+};
+
+function showPrice() {
+    
     const formField = input.parentElement;
-    formField.classList
+    formField.classList.add
 
 }
 
@@ -64,30 +65,31 @@ function validate() {
 document.querySelector('form').addEventListener('input'), function () {
     let valid = false;
     if (check)
-
+}
 
 const submitBtn = document.querySelector('submit-button');
 
 submitBtn.addEventListener('submit', (e) => {
-	e.preventDefault();
-	let formDataObj = {
-		name: fullNameInput.value,
-		email: emailInput.value,
-		telephone: telephoneInput.value,
-		time: timeSelect.value,
-	};
-	console.log(formDataObj);
+    e.preventDefault();
+    let formDataObj = {
+        name: fullNameInput.value,
+        email: emailInput.value,
+        telephone: telephoneInput.value,
+        time: timeSelect.value,
+    };
+    console.log(formDataObj);
 });
 
 
 
-//
-//
-//
-//
-//
-//
-//
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    // real time validation
 // real time validation
 function debounce(fn, delay = 500) {
 	let timeoutId;
@@ -101,14 +103,17 @@ function debounce(fn, delay = 500) {
 		}, delay);
 	};
 }
-// 
+
 //event delegation
-contactForm.addEventListener(
+form.addEventListener(
 	'input',
 	debounce(function (e) {
 		switch (e.target.id) {
-			case 'name':
-				checkName();
+			case 'firstName':
+				checkFirstName();
+				break;
+			case 'lastName':
+				checkLastName();
 				break;
 			case 'email':
 				checkEmail();
