@@ -14,7 +14,6 @@
         select#select-time {
             display: block;
         }
-        
     </style>
 </head>
 
@@ -54,11 +53,11 @@
                         <option value="9:00-9:30">9:00 - 9:30pm</option>
                         <option value="9:30-10:00">9:30 - 10:00pm</option>
                     </select>
-
-                    <label for="ticket-quantity" name="ticet-quantity">How many tickets would you like?</label>
-                    <input class="qty" id="qty" type="number" onchange="amount()" min="1" onkeypress="" required>
-                    <small></small>
-
+                    <div class="form-field form-section ">
+                        <label for="ticket-quantity" name="ticet-quantity">How many tickets would you like?</label>
+                        <input class="qty" id="qty" type="number" onchange="amount()" min="1" onkeypress="" required>
+                        <small></small>
+                    </div>
                     <label for="consent-box">I consent to my details being stored for contact and marketing
                         purposes</label>
                     <input type="checkbox" id="marketing-consent" required>

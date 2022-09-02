@@ -3,6 +3,7 @@ const fullNameInput = document.querySelector('#full-name');
 const emailInput = document.querySelector('#email');
 const telephoneInput = document.querySelector('#telephone');
 const timeSelect = document.querySelector('#select-time');
+const quantity = document.querySelector('qty');
 
 const isRequired = (value) => (value === '' ? false : true);
 let valid = false;
@@ -34,6 +35,20 @@ const showSuccess = (input) => {
 	error.textContent = '';
 };
 
+function showPrice() {
+    function ticketQty(qty) {
+    let qty = 0;
+    let tickPrice = 34.95;
+    qty = tickPrice * qty;
+    return qty;
+    };
+    const formField = input.parentElement;
+    formField.classList
+
+}
+
+
+
 const marketingConsent = document.querySelector('#marketing-consent');
 function validate() {
 	let consentGiven = false;
@@ -51,7 +66,7 @@ document.querySelector('form').addEventListener('input'), function () {
     if (check)
 
 
-const submitBtn = document.querySelector('#submit-button');
+const submitBtn = document.querySelector('submit-button');
 
 submitBtn.addEventListener('submit', (e) => {
 	e.preventDefault();
