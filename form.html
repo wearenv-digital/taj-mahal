@@ -1,8 +1,8 @@
 <head>
     <link rel="stylesheet" href="css/embarkgroup.webflow.css">
-    <script src="https://js.stripe.com/v3/"></script>
-    <script src="/public/checkout.js"></script>
-    <script src="/js/form.js"></script>
+    <!-- <script src="https://js.stripe.com/v3/"></script> -->
+    <!-- <script src="/public/checkout.js"></script> -->
+    <script src="/js/form2.js"></script>
 
     <style>
         label,
@@ -13,8 +13,8 @@
 
         select#select-time {
             display: block;
-
         }
+        
     </style>
 </head>
 
@@ -30,28 +30,40 @@
             <form action="" class="book-ticket" id="book-ticket" method="">
                 <!-- tab 1 -->
                 <div class="tabbed-content tab-1" id="tab-1">
-                    <label for="full-name">Full Name</label>
-                    <input class="form-field form-input" type="text" name="full-name" id="full-name">
-                    <small></small>
-                    <label for="email">Email</label>
-                    <input class="form-field form-input" type="text" name="email" id="email" value="">
-                    <small></small>
-                    <label for="telephone">Contact Number</label>
-                    <input class="form-field form-input" type="tel" name="telephone" id="telephone">
-                    <small></small>
+                    <div class="form-field form-section">
+                        <label for="full-name">Full Name</label>
+                        <input class="form-field form-input" type="text" name="full-name" id="full-name" required>
+                        <small></small>
+                    </div>
+                    <div class="form-field form-section">
+                        <label for="email">Email</label>
+                        <input class="form-field form-input" type="text" name="email" id="email" value="" required>
+                        <small></small>
+                    </div>
+                    <div class="form-field form-section">
+                        <label for="telephone">Contact Number</label>
+                        <input class="form-field form-input" type="tel" name="telephone" id="telephone" required>
+                        <small></small>
+                    </div>
                     <label for="select-time">Select your time slot in the drop down menu</label>
-                    <select name="select-time" id="select-time">
-                        <option value="7-7.30">7 - 7:30pm</option>
-                        <option value="7.30-8">7:30 - 8pm</option>
-                        <option value="8-8.30">8 - 8:30pm</option>
-                        <option value="8.30-9">8:30 - 9pm</option>
-                        <option value="9-9.30">9 - 9:30pm</option>
-                        <option value="9.30-10">9:30 - 10pm</option>
+                    <select name="select-time" id="select-time" required>
+                        <option value="7:00-7:30">7:00 - 7:30pm</option>
+                        <option value="7:30-8:00">7:30 - 8:00pm</option>
+                        <option value="8:00-8:30">8:00 - 8:30pm</option>
+                        <option value="8:30-9:00">8:30 - 9:00pm</option>
+                        <option value="9:00-9:30">9:00 - 9:30pm</option>
+                        <option value="9:30-10:00">9:30 - 10:00pm</option>
                     </select>
+
+                    <label for="ticket-quantity" name="ticet-quantity">How many tickets would you like?</label>
+                    <input class="qty" id="qty" type="number" onchange="amount()" min="1" onkeypress="" required>
                     <small></small>
+
                     <label for="consent-box">I consent to my details being stored for contact and marketing
                         purposes</label>
-                    <input type="checkbox">
+                    <input type="checkbox" id="marketing-consent" required>
+                    <small></small>
+
                     <label for="submit">You will be redirected to a secure Stripe payment portal</label>
                     <input type="submit" name="submit-to-stripe" id="submit-button">
                 </div>
@@ -68,7 +80,6 @@
                 </button>
                 <div id="payment-message" class="hidden"></div>
             </form>
-            <script src="/js/form.js"></script>
         </div>
 
     </div>
