@@ -3,18 +3,18 @@ const fullNameInput = document.querySelector('#full-name');
 const emailInput = document.querySelector('#email');
 const telephoneInput = document.querySelector('#telephone');
 const timeSelect = document.querySelector('#select-time');
-const quantity = document.querySelector('qty');
+const qty = document.querySelector('qty');
 
 const isRequired = (value) => (value === '' ? false : true);
 let valid = false;
 function checkInput() {
-    if (!isRequired(input)) {
-        showError(input, 'Cannot be blank');
-    } else {
-        showSuccess();
-        valid = true;
-    }
-    return valid;
+	if (!isRequired(input)) {
+		showError(input, 'Cannot be blank');
+	} else {
+		showSuccess();
+		valid = true;
+	}
+	return valid;
 }
 
 const showError = (input, mesage) => {
@@ -34,21 +34,17 @@ const showSuccess = (input) => {
 	const error = formField.querySelector('small');
 	error.textContent = '';
 };
-function ticketQty(qty) {
-    let qty = 0;
-    const tickPrice = 34.95;
-    qty = tickPrice * qty;
-    return qty;
-};
-
-function showPrice() {
-    
-    const formField = input.parentElement;
-    formField.classList.add
-
+function ticketQty() {
+	var qty = 0;
+	const tickPrice = 34.95;
+	total = tickPrice * qty;
+	return total;
 }
 
-
+function showPrice() {
+	const formField = input.parentElement;
+	formField.classList.add;
+}
 
 const marketingConsent = document.querySelector('#marketing-consent');
 function validate() {
@@ -62,34 +58,32 @@ function validate() {
 	}
 }
 
-document.querySelector('form').addEventListener('input'), function () {
-    let valid = false;
-    if (check)
-}
+// document.querySelector('form').addEventListener('input'), function () {
+//     let valid = false;
+//     if (check)
+// }
 
 const submitBtn = document.querySelector('submit-button');
 
 submitBtn.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let formDataObj = {
-        name: fullNameInput.value,
-        email: emailInput.value,
-        telephone: telephoneInput.value,
-        time: timeSelect.value,
-    };
-    console.log(formDataObj);
+	e.preventDefault();
+	let formDataObj = {
+		name: fullNameInput.value,
+		email: emailInput.value,
+		telephone: telephoneInput.value,
+		time: timeSelect.value,
+	};
+	console.log(formDataObj);
 });
 
-
-    
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    // real time validation
+//
+//
+//
+//
+//
+//
+//
+// real time validation
 // real time validation
 function debounce(fn, delay = 500) {
 	let timeoutId;
