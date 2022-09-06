@@ -1,7 +1,7 @@
 <head>
     <link rel="stylesheet" href="css/embarkgroup.webflow.css">
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="/public/checkout.js" defer></script>
+    <!-- <script src="/public/checkout.js" defer></script> -->
     <script src="/js/form2.js" defer></script>
 
 
@@ -27,7 +27,7 @@
 
 
         <div class="form-holder-stripe">
-            <form method="POST" action="payment" class="book-ticket" id="book-ticket">
+            <form method="" action="/customers" class="book-ticket" id="book-ticket">
                 <!-- tab 1 -->
                 <div class="tabbed-content tab-1" id="tab-1">
                     <div class="form-field form-section">
@@ -66,7 +66,7 @@
                     <small></small>
 
                     <label for="submit">You will be redirected to a secure Stripe payment portal</label>
-                    <input type="submit" name="submit-to-stripe" id="submit-button">
+                    <input type="submit" name="submit-to-stripe" id="checkout-button">
                 </div>
                 <!-- tab 2 -->
 

@@ -49,17 +49,18 @@ const emailInput = document.getElementById('email');
 const telephoneInput = document.getElementById('telephone');
 const timeSelect = document.getElementById('select-time');
 
-const submitBtn = document.getElementById('submit-button');
+const submitBtn = document.getElementById('checkout-button');
 // let customerObj = {};
 // let items = [];
 // items = [{ id: 'prod_MJmUC4NgTKOz2X' }];
 
-form.addEventListener('submit', (e) => {
-	e.preventDefault();
-	showStripe();
+let items = [];
+let customerObj = {};
 
-	let items = [];
-	let customerObj = {};
+form.addEventListener('submit', async (e) => {
+	e.preventDefault();
+	// showStripe();
+
 	customerObj = {
 		name: fullNameInput.value,
 		email: emailInput.value,
@@ -70,4 +71,22 @@ form.addEventListener('submit', (e) => {
 
 	customerObj.items = items;
 	console.log(customerObj);
+
+	try {
+		const response = await fetch('/customers', {
+			method: 'POST',
+			body: customerObj,
+		});
+		console.log('status code: ', Response.status);
+		if (!response.ok) {
+			console.log(Response);
+			throw new Error(`Error! Status: ${Response.status}`);
+		} else {
+			console.log(`okay! ${Response.status}`);
+		}
+		const result = await Response.json();
+		return result;
+	} catch (err) {
+		console.log(err);
+	}
 });
