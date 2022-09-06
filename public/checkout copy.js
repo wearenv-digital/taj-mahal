@@ -2,7 +2,7 @@
 var stripe = Stripe('pk_test_51Lb8rPA5xTk3oKJdJoKPGXXb0ExZB3s0BdC0XYw62QNY5biTzPSaM98HhtExPYCtWGH3RiJWU5DVzMZOaxBkHZgF00m5TP3hSx');
 
 // The items the customer wants to buy
-const items = [{ id: 'xl-tshirt' }];
+const items = [{ id: 'prod_MJmUC4NgTKOz2X' }];
 
 let elements;
 
@@ -125,4 +125,3 @@ function setLoading(isLoading) {
 		document.querySelector('#button-text').classList.remove('hidden');
 	}
 }
-

@@ -1,8 +1,9 @@
 <head>
     <link rel="stylesheet" href="css/embarkgroup.webflow.css">
-    <!-- <script src="https://js.stripe.com/v3/"></script> -->
-    <!-- <script src="/public/checkout.js"></script> -->
-    <script src="/js/form2.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/public/checkout.js" defer></script>
+    <script src="/js/form2.js" defer></script>
+
 
     <style>
         label,
@@ -26,7 +27,7 @@
 
 
         <div class="form-holder-stripe">
-            <form action="" class="book-ticket" id="book-ticket" method="">
+            <form method="POST" action="payment" class="book-ticket" id="book-ticket">
                 <!-- tab 1 -->
                 <div class="tabbed-content tab-1" id="tab-1">
                     <div class="form-field form-section">
@@ -54,9 +55,10 @@
                         <option value="9:30-10:00">9:30 - 10:00pm</option>
                     </select>
                     <div class="form-field form-section ">
-                        <label for="ticket-quantity" name="ticet-quantity">How many tickets would you like?</label>
-                        <input class="qty" id="qty" type="number" onchange="amount()" min="1" onkeypress="" required>
-                        <small></small>
+                        <label for="quantity" name="quantity">How many tickets would you like?</label>
+                        <input class="quantity" name="quantity" id="quantity" type="number" onchange="totalPrice()"
+                            min="1" onkeypress="" required>
+                        <div class="price-field" id="price-field"></div>
                     </div>
                     <label for="consent-box">I consent to my details being stored for contact and marketing
                         purposes</label>
@@ -73,11 +75,13 @@
                         <!-- stripe payment form -->
 
                     </div>
+                    <div class="spinner hidden" id="spinner"></div>
+                    <span id="button-text">Pay now</span>
+                    </button>
+                    <div id="payment-message" class="hidden"></div>
                 </div>
-                <div class="spinner hidden" id="spinner"></div>
-                <span id="button-text">Pay now</span>
-                </button>
-                <div id="payment-message" class="hidden"></div>
+
+
             </form>
         </div>
 
@@ -85,3 +89,6 @@
 
 
 </body>
+<footer>
+
+</footer>

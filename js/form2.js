@@ -1,55 +1,26 @@
 const form = document.querySelector('#book-ticket');
-const fullNameInput = document.querySelector('#full-name');
-const emailInput = document.querySelector('#email');
-const telephoneInput = document.querySelector('#telephone');
-const timeSelect = document.querySelector('#select-time');
-const qty = document.querySelector('qty');
+const qty = document.getElementById('quantity');
 
-const isRequired = (value) => (value === '' ? false : true);
-let valid = false;
-function checkInput() {
-	if (!isRequired(input)) {
-		showError(input, 'Cannot be blank');
-	} else {
-		showSuccess();
-		valid = true;
-	}
-	return valid;
+// display the total price
+
+const priceField = document.getElementById('price-field');
+
+priceField.innerHTML = `<h3>Total: £0</h3>`;
+
+const tickPrice = 34.95;
+
+function totalPrice() {
+	const quantity = qty.value;
+	let total = quantity * tickPrice;
+	total = total.toFixed(2);
+
+	priceField.innerHTML = `<h3>Total: £${total}</h3>`;
 }
 
-const showError = (input, mesage) => {
-	const formField = input.parentElement;
-	formField.classList.remove('success');
-	formField.classList.add(error);
-	console.log('input error');
-	const error = formField.querySelector('small');
-	error.textContent = message;
-};
-
-const showSuccess = (input) => {
-	const formField = input.parentElement;
-	formField.classList.remove('error');
-	formField.classList.add('success');
-	console.log('input success');
-	const error = formField.querySelector('small');
-	error.textContent = '';
-};
-function ticketQty() {
-	var qty = 0;
-	const tickPrice = 34.95;
-	total = tickPrice * qty;
-	return total;
-}
-
-function showPrice() {
-	const formField = input.parentElement;
-	formField.classList.add;
-}
-
+var consentGiven = false;
 const marketingConsent = document.querySelector('#marketing-consent');
 function validate() {
-	let consentGiven = false;
-	if ((document.querySelector('#marketing-consent').checked = true)) {
+	if (document.querySelector('#marketing-consent').checked == true) {
 		console.log('checked');
 		consentGiven = true;
 	} else {
@@ -58,63 +29,45 @@ function validate() {
 	}
 }
 
-// document.querySelector('form').addEventListener('input'), function () {
-//     let valid = false;
-//     if (check)
-// }
+marketingConsent.addEventListener('change', (e) => {
+	validate();
+	console.log(consentGiven);
+});
 
-const submitBtn = document.querySelector('submit-button');
+const tabOne = document.getElementById('tab-1');
+const stripeSection = document.getElementById('payment-form');
 
-submitBtn.addEventListener('submit', (e) => {
+stripeSection.style.display = 'none';
+
+function showStripe() {
+	stripeSection.style.display = 'block';
+	tabOne.style.display = 'none';
+}
+
+const fullNameInput = document.getElementById('full-name');
+const emailInput = document.getElementById('email');
+const telephoneInput = document.getElementById('telephone');
+const timeSelect = document.getElementById('select-time');
+
+const submitBtn = document.getElementById('submit-button');
+// let customerObj = {};
+// let items = [];
+// items = [{ id: 'prod_MJmUC4NgTKOz2X' }];
+
+form.addEventListener('submit', (e) => {
 	e.preventDefault();
-	let formDataObj = {
+	showStripe();
+
+	let items = [];
+	let customerObj = {};
+	customerObj = {
 		name: fullNameInput.value,
 		email: emailInput.value,
 		telephone: telephoneInput.value,
 		time: timeSelect.value,
+		quantity: qty.value,
 	};
-	console.log(formDataObj);
+
+	customerObj.items = items;
+	console.log(customerObj);
 });
-
-//
-//
-//
-//
-//
-//
-//
-// real time validation
-// real time validation
-function debounce(fn, delay = 500) {
-	let timeoutId;
-
-	return (...args) => {
-		if (timeoutId) {
-			clearTimeout(timeoutId);
-		}
-		timeoutId = setTimeout(() => {
-			fn.apply(null, args);
-		}, delay);
-	};
-}
-
-//event delegation
-form.addEventListener(
-	'input',
-	debounce(function (e) {
-		switch (e.target.id) {
-			case 'firstName':
-				checkFirstName();
-				break;
-			case 'lastName':
-				checkLastName();
-				break;
-			case 'email':
-				checkEmail();
-				break;
-			case 'telephone':
-				checkTelephone();
-				break;
-		}
-	})
-);
